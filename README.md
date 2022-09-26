@@ -36,8 +36,7 @@ To control module's behavior, change variables' values regarding the following:
 |------|-------------|------|---------|:--------:|
 |boolean_type_organization_policies| List of organisation Policy Constraint for implementing Boolean policy | `set(string)` | `["compute skipDefaultNetworkCreation", "compute.requireOsLogin", "storage.uniformBucketLevelAccess", "iam.disableServiceAccountKeyCreation"]` | no |
 | bool\_policy\_for | Resource hierarchy node to apply the Boolean policy to: can be one of `organization`, `folder`, or `project`. | `string` | n/a | yes |
-|bool_policy_folder_id| Set of folders to exclude from the Boolean policy | `set(string)` | `[]` | no |
-| bool\_policy\_for | Resource hierarchy node to apply the Boolean policy to: can be one of `organization`, `folder`, or `project`. | `string` | n/a | yes |
+| bool_policy_folder_id| Set of folders to exclude from the Boolean policy | `set(string)` | `[]` | no |
 | organization\_id | The organization id for putting the policy | `string` | `null` | no |
 | bool_policy_folder_id | The folder id for putting the boolean policy | `string` | `null` | no |
 | bool_policy_project_id | The project id for putting the boolean policy | `string` | `null` | no |
