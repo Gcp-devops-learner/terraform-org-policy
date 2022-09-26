@@ -43,15 +43,11 @@ To control module's behavior, change variables' values regarding the following:
 | bool_policy_project_id | The project id for putting the boolean policy | `string` | `null` | no |
 | bool_policy_exclude_folders_id | Set of folders to exclude from the Boolean policy | `set(string)` | `[]` | no |
 | bool_policy_exclude_projects_id | Set of projects to exclude from the Boolean policy | `set(string)` | `[]` | no |
-
 | policy\_for | Resource hierarchy node to apply the policy to: can be one of `organization`, `folder`, or `project`. | `string` | n/a | yes |
 | policy\_type | The constraint type to work with (either 'boolean' or 'list') | `string` | `"list"` | no |
 | enforce | If boolean constraint, whether the policy is enforced at the root; if list constraint, whether to deny all (true) or allow all | `bool` | `null` | no |
-
-
 | vm_external_policy_folder_id|  The folder id for putting the VM External policy | `set(string)` | `[]` | no |
 | vm_external_policy_project_id | The project id for putting the VM External policy | `string` | `null` | no |
-
 | vm_external_policy_exclude_folders_id | Set of folders to exclude from the VM External policy | `set(string)` | `[]` | no |
 | vm_external_policy_exclude_projects_id | Set of projects to exclude from the VM External policy | `set(string)` | `[]` | no |
 | vm_external_policy_folder_id | The folder id for putting the VM External policy | `string` | `null` | no |
