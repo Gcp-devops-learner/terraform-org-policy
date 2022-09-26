@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+variable "boolean_type_organization_policies" {
+  description = "The list of organisation polices to be implemented"
+  type = list(string)
+  default= []
+}
+
 variable "organization_id" {
   description = "The organization id for putting the policy"
   type        = string
@@ -77,19 +82,9 @@ variable "vm_external_policy_for" {
 }
 
 
-# variable "domains_to_allow" {
-#   description = "The list of domains to allow users from"
-#   type        = list(string)
-# }
-
 variable "vms_to_allow" {
   description = "The list of VMs are allowed to use external IP, every element of the list must be identified by the VM instance name, in the form: projects/PROJECT_ID/zones/ZONE/instances/INSTANCE"
   type        = list(string)
   default     = []
 }
 
-variable "boolean_type_organization_policies" {
-  description = "The list of organisation polices to be implemented"
-  type = list(string)
-  default= []
-}

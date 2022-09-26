@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 boolean_type_organization_policies = [
     
     "compute.skipDefaultNetworkCreation",
     "compute.requireOsLogin",
-    "storage.uniformBucketLevelAccess"
+    "storage.uniformBucketLevelAccess",
+    "iam.disableServiceAccountKeyCreation"
   ]
 
 organization_id = "98002871011"
