@@ -14,7 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
+ data "google_organization" "orgs" {
+  for_each = toset(var.domains_to_allow)
+  domain   = each.value
+}
+
+
 module "organization_policies_type_boolean" {
   for_each        = toset(var.boolean_type_organization_policies)
   source          = "terraform-google-modules/org-policy/google"
@@ -46,4 +52,22 @@ module "org_vm_external_ip_access" {
   constraint      = "constraints/compute.vmExternalIpAccess"
   exclude_folders  = var.vm_external_policy_exclude_folders_id
   exclude_projects = var.vm_external_policy_exclude_projects_id
+}
+
+/******************************************
+  IAM Policies
+*******************************************/
+
+module "allowed-policy-member-domains" {
+  source            = "terraform-google-modules/org-policy/google"
+  policy_for        = var.domain_policy_for
+  organization_id   = var.organization_id
+  folder_id         = var.domain_policy_folder_id
+  project_id        = var.domain_policy_project_id
+  constraint        = "constraints/iam.allowedPolicyMemberDomains"
+  policy_type       = "list"
+  allow             = [for org in data.google_organization.orgs : org["directory_customer_id"]]
+  allow_list_length = length(var.domains_to_allow)
+  exclude_folders   = var.domain_policy_exclude_folders_id
+  exclude_projects  = var.domain_policy_exclude_projects_id
 }

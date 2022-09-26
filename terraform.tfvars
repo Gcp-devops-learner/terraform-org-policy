@@ -30,6 +30,8 @@ bool_policy_exclude_folders_id = ["folders/698069440381"]
 vm_external_policy_folder_id = [""]
 vm_external_policy_project_id= "pentagon-324205"
 vm_external_policy_for= "project"
-
 vm_external_policy_exclude_folders_id = []
 vm_external_policy_exclude_projects_id = []
+
+domain_policy_for = "organization"
+domains_to_allow= ["hector.joonix.net","google.com"]

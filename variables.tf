@@ -18,7 +18,6 @@ variable "boolean_type_organization_policies" {
   type = list(string)
   default= []
 }
-
 variable "organization_id" {
   description = "The organization id for putting the policy"
   type        = string
@@ -76,6 +75,7 @@ variable "vm_external_policy_exclude_projects_id" {
   type        = set(string)
   default     = []
 }
+
 variable "vm_external_policy_for" {
   description = "Resource hierarchy node to apply the policy to: can be one of organization, folder or project for policy vmExternalIpAccess"
   type        = string
@@ -88,3 +88,36 @@ variable "vms_to_allow" {
   default     = []
 }
 
+
+variable "domain_policy_for" {
+  description = "Resource hierarchy node to apply the policy to: can be one of organization, folder or project for Boolean organization Policy"
+  type        = string
+}
+
+variable "domains_to_allow" {
+  description = "The list of domains to allow users from"
+  type        = list(string)
+}
+variable "domain_policy_folder_id" {
+  description = "The folder id for putting the policy allowedPolicyMemberDomains"
+  type        = string
+  default     = null
+}
+
+variable "domain_policy_project_id" {
+  description = "The project id for putting the policy allowedPolicyMemberDomains"
+  type        = string
+  default     = null  
+}
+
+variable "domain_policy_exclude_folders_id" {
+  description = "Set of folders to exclude from the policy allowedPolicyMemberDomains"
+  type        = set(string)
+  default     = []
+}
+
+variable "domain_policy_exclude_projects_id" {
+  description = "Set of projects to exclude from the policy allowedPolicyMemberDomains"
+  type        = set(string)
+  default     = []
+}
