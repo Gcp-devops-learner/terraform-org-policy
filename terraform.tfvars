@@ -22,16 +22,14 @@ boolean_type_organization_policies = [
     "iam.disableServiceAccountKeyCreation"
   ]
 
-organization_id = "98002871011"
+organization_id = "147374074151"
 
-bool_policy_for= "organization"
-bool_policy_exclude_folders_id = ["folders/698069440381"]
+bool_policy_for= "folder"
+bool_policy_folder_id = "folders/342487704408"
 
-vm_external_policy_folder_id = [""]
-vm_external_policy_project_id= "pentagon-324205"
-vm_external_policy_for= "project"
-vm_external_policy_exclude_folders_id = []
-vm_external_policy_exclude_projects_id = []
+vm_external_policy_folder_id = "folders/342487704408"
+vm_external_policy_for= "folder"
 
-domain_policy_for = "organization"
-domains_to_allow= ["hector.joonix.net","google.com"]
+domain_policy_for = "folder"
+domain_policy_folder_id = "folders/342487704408"
+domains_to_allow= ["xyz.com"]

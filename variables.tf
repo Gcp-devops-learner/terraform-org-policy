@@ -16,7 +16,7 @@
 variable "boolean_type_organization_policies" {
   description = "The list of organisation polices to be implemented"
   type = list(string)
-  default= []
+  default= [""]
 }
 variable "organization_id" {
   description = "The organization id for putting the policy"
@@ -25,14 +25,14 @@ variable "organization_id" {
 
 variable "bool_policy_folder_id" {
   description = "The folder id for putting the boolean organization policy"
-  type        = list(string)
-  default = []
+  type        = string
+  default = null
 }
 
 variable "bool_policy_project_id" {
   description = "The project id for putting the boolean organization policy"
-  type        = list(string)
-  default = []
+  type        = string
+  default = null
 }
 
 variable "bool_policy_exclude_folders_id" {
@@ -55,13 +55,14 @@ variable "bool_policy_for" {
 
 variable "vm_external_policy_folder_id" {
   description = "The folder id for putting the policy vmExternalIpAccess"
-  type        = list(string)
-  default = []
+  type        = string
+  default = null
 }
 
 variable "vm_external_policy_project_id" {
   description = "The project id for putting the policy vmExternalIpAccess"
   type        = string
+  default     = null
 }
 
 variable "vm_external_policy_exclude_folders_id" {
@@ -107,7 +108,7 @@ variable "domain_policy_folder_id" {
 variable "domain_policy_project_id" {
   description = "The project id for putting the policy allowedPolicyMemberDomains"
   type        = string
-  default     = null  
+  default     = null
 }
 
 variable "domain_policy_exclude_folders_id" {
